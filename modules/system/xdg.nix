@@ -7,6 +7,7 @@
       xdg-desktop-portal-wlr
       xdg-desktop-portal-hyprland
     ];
+    config.common.default = "*";
   };
   environment.systemPackages = with pkgs; [
     xdg-utils

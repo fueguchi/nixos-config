@@ -15,5 +15,6 @@
     ./power.nix
     ./keyring.nix
     ./misc.nix
+    ./sddm.nix
   ];
 }

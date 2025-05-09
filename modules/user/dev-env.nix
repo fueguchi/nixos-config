@@ -11,7 +11,9 @@
     ccls
     cmake
     gnumake
-    
-  ];
-}
+    nixd
+    nil
 
+  ];
+  programs.nix-ld.enable = true;
+}

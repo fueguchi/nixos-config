@@ -7,5 +7,6 @@
     noto-fonts-emoji
     noto-fonts
     monocraft
+    maple-mono-SC-NF
   ];
 }

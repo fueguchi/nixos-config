@@ -1,4 +1,4 @@
-
+{
   imports = [
     ./dev-env.nix
     ./vpn.nix

@@ -61,7 +61,7 @@ if [ -n "$selected_image_path" ]; then
   ln -sf "$selected_image_path" "$wallpaper_symlink"
 
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-  . ~/set_wallpaper.sh
+  . ./set_wallpaper.sh
 else
    i3-msg restart
 fi

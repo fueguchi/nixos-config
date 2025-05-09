@@ -14,6 +14,7 @@
     description = "erik";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "video" "input" ];
   };
-
+  console.keyMap = "br-abnt2";
+  programs.git.enable = true;
   system.stateVersion = "24.11"; # just don't change if u don't know what you're doing
 }

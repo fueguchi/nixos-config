@@ -1,0 +1,19 @@
+{
+  imports = [
+    ./fonts
+    ./boot.nix
+    ./environment.nix
+    ./locale.nix
+    ./hardware.nix
+    ./services.nix
+    ./xdg.nix
+    ./time.nix
+    ./network.nix
+    ./zram.nix
+    ./security.nix
+    ./intel.nix
+    ./power.nix
+    ./keyring.nix
+    ./misc.nix
+  ];
+}

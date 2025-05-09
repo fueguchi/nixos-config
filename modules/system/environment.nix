@@ -10,6 +10,8 @@
       NIXOS_OZONE_WL = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "wayland";
       ELECTRON_USE_WAYLAND = "1";
+      STEAM_ENABLE_FEATURES = "UseOzonePlatform";
+      STEAM_OZONE_PLATFORM = "wayland";
     };
   };
 }

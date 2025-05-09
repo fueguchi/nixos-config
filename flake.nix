@@ -4,8 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,8 +21,8 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs: 
-  let 
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs:
+  let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
     pkgs = nixpkgs.legacyPackages.${system};
@@ -34,24 +35,27 @@
       inherit system;
       specialArgs = {
         inherit inputs;
-	inherit username;
-	inherit name;
-	inherit pkgs-unstable;
+        inherit username;
+        inherit name;
+        inherit pkgs-unstable;
       };
       modules = [
-        ./configuration.nix
-	home-manager.nixosModules.default
-	{
-	  home-manager.users.erik = {
-	    imports = [ ./home.nix ];
-	  };
-	}
+        ./host/erik/configuration.nix
+        nixvim.nixosModules.nixvim
+        spicetify-nix.nixosModules.spicetify
+        home-manager.nixosModules.default
+      	{
+          home-manager = {
+            users.erik = {
+              imports = [ ./home/home.nix ];
+            };
+          };
+        }
       ];
-      nixpkgs.config.allowUnfree = true;
     };
     homeConfigurations."erik@wired" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ ./home.nix ];
+      modules = [ ./home/home.nix ];
     };
   };
 }

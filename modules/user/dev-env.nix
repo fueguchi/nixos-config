@@ -1,0 +1,17 @@
+{ config, pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    #lang
+    nodejs_23
+    python312Full
+    libgcc
+    gcc_debug
+
+    # \o/
+    ccls
+    cmake
+    gnumake
+    
+  ];
+}
+

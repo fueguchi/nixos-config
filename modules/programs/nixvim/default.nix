@@ -14,6 +14,7 @@
       vim-suda
       pywal-nvim
       yuck-vim
+      lualine-nvim
     ];
     colorscheme = "pywal";
   };

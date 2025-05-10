@@ -1,12 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   imports = [ ./eww.nix ];
   programs = {
     noisetorch.enable = true;
   };
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     rofi
     swww
-    pywal16
-  ];
+    pywal
+  ]) ++ (with pkgs-unstable; [
+  ]);
 }

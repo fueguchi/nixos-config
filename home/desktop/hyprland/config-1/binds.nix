@@ -4,8 +4,7 @@
       # some basic use binds
       "SUPER, E, exec, kitty yazi"
       "SUPER, PRINT, exec, hyprshot -m region --freeze"
-      #"SUPER, T, exec, /home/erik/.dotfiles/home/desktop/hyprland/scripts/wallpaper.sh" # unfortunelly i can't write this script (i stole from a guy on reddit) with writeShellScriptBin
-      "SUPER, T, exec, /home/erik/Downloads/wallpaper_select.sh"
+      "SUPER, T, exec, /home/erik/.dotfiles/home/desktop/hyprland/scripts/wallpaper.sh" # unfortunelly i can't write this script (i stole from a guy on reddit) with writeShellScriptBin
       "SUPER, Q, exec, kitty"
       "SUPER, R, exec, rofi -show"
       "SUPER, Y, exec, kitty nvim"
@@ -51,7 +50,7 @@
       # example special workspace, i dont use, so, i just disable
       #"SUPER, S, togglespecialworkspace, magic"
       #"SUPER SHIFT, S, movetoworkspace, special:magic"
-      
+
       # scroll through existing workspaces
       "SUPER, mouse_down, workspace, e+1"
       "SUPER, mouse_up, workspace, e-1"

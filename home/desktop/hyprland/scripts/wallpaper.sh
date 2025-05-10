@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 image_dir="$HOME/.wallpapers/"
-wallpaper_symlink="$HOME/.wallpaper/wallpaper.png"
+wallpaper_symlink="$HOME/.wallpapers/sym/wallpaper.png"
 theme_file="/tmp/theme_variant"
-
 
 # function to apply the wal theme
 apply_wal_theme() {
@@ -25,7 +24,6 @@ apply_wal_theme() {
   eww open bar
 }
 
-# function to set the wallpaper using swww
 set_swww_wallpaper() {
   if [ ! -f "$wallpaper_symlink" ]; then
     notify-send -a "swww" "No wallpaper found" "$wallpaper_symlink"
@@ -61,7 +59,7 @@ if [ -n "$selected_image_path" ]; then
   ln -sf "$selected_image_path" "$wallpaper_symlink"
 
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-  . ./set_wallpaper.sh
+   hyprctl reload
 else
    i3-msg restart
 fi

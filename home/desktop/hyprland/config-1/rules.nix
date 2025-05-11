@@ -5,8 +5,12 @@
       "float,(blueman-manager-wrapped)"
       "float,(.protonvpn-app-wrapped)"
       "float,(org.pulseaudio.pavucontrol)"
+      "suppressevent maximize, class:.*"
     ];
     windowrulev2 = [
+      # fix some dragging issuse with xwayland
+      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+
       # zathura
       "center,class:^(org.pwmt.zathura)$"
       "size 985 960,class:^(org.pwmt.zathura)$"

@@ -8,6 +8,7 @@
     rofi
     swww
     pywal
+    ffmpeg-full
   ]) ++ (with pkgs-unstable; [
   ]);
 }

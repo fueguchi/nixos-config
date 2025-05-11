@@ -6,7 +6,6 @@
   };
   environment.systemPackages = (with pkgs; [
     rofi
-    swww
     pywal
     ffmpeg-full
   ]) ++ (with pkgs-unstable; [

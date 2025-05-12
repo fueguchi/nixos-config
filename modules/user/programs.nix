@@ -10,7 +10,6 @@
     yazi
     blueman
     cava
-    google-chrome
     brave
   ];
 }

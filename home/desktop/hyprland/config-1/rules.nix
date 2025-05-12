@@ -20,6 +20,11 @@
       "float,class:^(.blueman-manager-wrapped)$,title:^(Bluetooth)$"
       "size 1150 750,class:^(.blueman-manager-wrapped)$,title:^(Bluetooth)$"
 
+      # nautilus
+      "center,class:^(org.gnome.Nautilus)$,title:^(Loading...)$"
+      "float,class:^(org.gnome.Nautilus)$,title:^(Loading...)$"
+      "size 1150 750,class:^(org.gnome.Nautilus)$,title:^(Loading...)$"
+
       # gtk file chooser
       "float,class:(xdg-desktop-portal-gtk),title:^(.*Files)$"
       "center,class:(xdg-desktop-portal-gtk),title:^(.*Files)$"

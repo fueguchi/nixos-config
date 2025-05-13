@@ -2,7 +2,7 @@
   imports = [
     ./nixvim
     ./misc
-    ./spicetify.nix
+    #./spicetify.nix
     ./discord.nix
     ./zsh.nix
     ./wm.nix

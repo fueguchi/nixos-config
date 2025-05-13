@@ -7,7 +7,9 @@
   environment.systemPackages = (with pkgs; [
     rofi
     pywal
+    vscode
     ffmpeg-full
   ]) ++ (with pkgs-unstable; [
+    spotify
   ]);
 }

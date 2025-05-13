@@ -11,5 +11,6 @@
     blueman
     cava
     brave
+    thunderbird
   ];
 }

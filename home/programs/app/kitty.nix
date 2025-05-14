@@ -9,7 +9,7 @@
     '';
     settings = {
       confirm_os_window_close = 0;
-      font_family = "Liga SFMono Nerd Font"; 
+      font_family = "Maple Mono SC NF";
       window_margin_width = 18;
       bold_font = "auto";
       italic_font = "auto";

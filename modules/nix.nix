@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   nix = {
     settings = {
@@ -11,5 +12,9 @@
       options = "--delete-older-than 7d";
     };
   };
+  environment.systemPackages = [ 
+    pkgs.nix-prefetch
+    pkgs.nix-prefetch-github
+  ];
   nixpkgs.config.allowUnfree = true;
 }

@@ -40,7 +40,7 @@
         inherit pkgs-unstable;
       };
       modules = [
-        ./host/erik/configuration.nix
+        ./host/wired/configuration.nix
         nixvim.nixosModules.nixvim
         spicetify-nix.nixosModules.spicetify
         home-manager.nixosModules.default

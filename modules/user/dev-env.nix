@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     #lang
-    nodejs_23
+    nodejs_24
     python312Full
     libgcc
     gcc_debug

@@ -2,11 +2,12 @@
 {
   imports = [ ./non-pkgs ];
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "Terminus" "VictorMono" "JetBrainsMono" "Mononoki" "GeistMono" "Hermit" "IntelOneMono" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.mononoki
+    nerd-fonts.geist-mono
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts
-    monocraft
-    maple-mono-SC-NF
+    maple-mono.NF-CN
   ];
 }

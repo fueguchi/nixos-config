@@ -16,5 +16,5 @@
   };
   console.keyMap = "br-abnt2";
   programs.git.enable = true;
-  system.stateVersion = "24.11"; # just don't change if u don't know what you're doing
+  system.stateVersion = "25.05"; # just don't change if u don't know what you're doing
 }

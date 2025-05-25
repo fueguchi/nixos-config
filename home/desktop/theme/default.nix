@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.pointerCursor = {
     enable = true;
@@ -28,7 +28,7 @@
   wayland.windowManager.hyprland.settings = {
     env = [
       "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
-      "HYPRCURSOR_SIZE,${toString config.pointerCursor.size}"
+      "HYPRCURSOR_SIZE,${toString config.home.pointerCursor.size}"
     ];
     exec-once = [
       "gsettings set org.gnome.desktop.interface cursor-theme '${config.home.pointerCursor.name}'"

@@ -7,7 +7,7 @@
       xdg-desktop-portal-wlr
       xdg-desktop-portal-hyprland
     ];
-    config.common.default = "*";
+    config.hyprland.preferred = [ "hyprland" "gtk" ];
   };
   environment.systemPackages = with pkgs; [
     xdg-utils

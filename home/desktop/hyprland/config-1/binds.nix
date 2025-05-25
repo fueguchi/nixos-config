@@ -8,7 +8,7 @@
       "SUPER, Q, exec, kitty"
       "SUPER, R, exec, rofi -show"
       "SUPER, Y, exec, kitty nvim"
-      "SUPER, L, exec, nemo"
+      "SUPER, L, exec, nautilus"
 
       # bellow most are default keybinds of hyprland
       "SUPER, C, killactive, "

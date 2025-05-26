@@ -1,0 +1,13 @@
+@theme "./cache/wal/colors-rofi-dark.rasi"
+
+configuration {
+  modi:                           "drun, emoji";
+  show-icons:                     true;
+  display-drun:                   "";
+  display-emoji:                  "";
+  drun-display-format:            "{name}";
+}
+
+* {
+  font:                           "
+}

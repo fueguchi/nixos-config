@@ -9,5 +9,6 @@ configuration {
 }
 
 * {
-  font:                           "
+  font:                           "Maple Mono";
+
 }

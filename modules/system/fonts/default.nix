@@ -8,6 +8,6 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts
-    maple-mono.NF-CN
+    maple-mono.truetype
   ];
 }

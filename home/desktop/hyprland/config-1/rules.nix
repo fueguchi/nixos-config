@@ -12,9 +12,9 @@
       "size 985 960, class: org.pwmt.zathura"
 
       # bluetooth manager
-      "center, class: .blueman-manager-wrapped, title: Bluetooth"
-      "float, class: .blueman-manager-wrapped, title: Bluetooth"
-      "size 1150 750, class: .blueman-manager-wrapped, title: Bluetooth"
+      "center, class: .blueman-manager-wrapped, title: Bluetooth Devices"
+      "float, class: .blueman-manager-wrapped, title: Bluetooth Devices"
+      "size 1150 750, class: .blueman-manager-wrapped, title: Bluetooth Devices"
 
       # nautilus
       "center, class: org.gnome.Nautilus"
@@ -27,9 +27,9 @@
       "size 1150 750, class: xdg-desktop-portal-gtk"
 
       # protonvpn gtk
-      "float, class: .protonvpn-app-wrapped, title: Proton"
-      "size 400 600, class: .protonvpn-app-wrapped, title: Proton"
-      "center, class: .protonvpn-app-wrapped, title: Proton"
+      "float, class: .protonvpn-app-wrapped"
+      "size 400 600, class: .protonvpn-app-wrapped"
+      "center, class: .protonvpn-app-wrapped"
 
       # discord file chooser
       "float, class:discord, initialTitle:Open"

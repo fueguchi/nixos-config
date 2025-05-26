@@ -4,7 +4,6 @@
     zed-editor
     nwg-look
     pavucontrol
-    zathura
     nautilus
     gimp
     yazi

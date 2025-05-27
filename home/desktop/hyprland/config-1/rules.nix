@@ -41,6 +41,10 @@
       "float, class: org.pulseaudio.pavucontrol"
       "size 750 400, class: org.pulseaudio.pavucontrol"
       "center, class: org.pulseaudio.pavucontrol"
+
+      "float, class: steam, title: Friends List"
+      "size 642 300, class: steam, title: Friends List"
+      "center, class: steam, title: Friends List"
     ];
 
     layerrule = [

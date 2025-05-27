@@ -1,6 +1,6 @@
 {
   # select animation configuration :)
   imports = [
-    ./default-config.nix
+    ./horizontal-fade.nix
   ];
 }

@@ -15,6 +15,7 @@
       pywal-nvim
       yuck-vim
       lualine-nvim
+      nvim-autopairs
     ];
     colorscheme = "pywal";
   };

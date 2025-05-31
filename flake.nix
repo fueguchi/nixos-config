@@ -22,8 +22,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; }; 
     username = "erik";
-    name = "erik";
-    overlays = [ nixgl.overlay ];
+    name = "erik"; 
   in
   {
     nixosConfigurations.wired = lib.nixosSystem {

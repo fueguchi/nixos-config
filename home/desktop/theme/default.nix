@@ -16,12 +16,39 @@
     cursorTheme = {
       name = "Yaru-dark";
       package = pkgs.yaru-theme;
-      size = 24;
+      size = 24; 
     };
-
+    
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
+    }; 
+    
+    font = {
+      package = pkgs.fira;
+      name = "Fira Sans";
+      #size = "";
+    };
+
+    theme = {
+      package = pkgs.colloid-gtk-theme;
+      name = "Colloid-Dark";
+    };
+
+    gtk2 = {
+      extraConfig = "gtk-application-prefer-dark-theme = true";
+    };
+
+    gtk3 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
+    };
+
+    gtk4 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = true;
+      };
     };
   };
   

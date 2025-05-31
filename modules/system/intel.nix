@@ -10,9 +10,7 @@
       extraPackages = with pkgs; [
         intel-media-driver
         intel-media-sdk
-        intel-vaapi-driver
         intel-compute-runtime
-        vaapiIntel
         libva
         intel-ocl
       ];

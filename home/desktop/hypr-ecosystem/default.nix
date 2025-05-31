@@ -1,6 +1,6 @@
 {
   imports = [
-    ./hyprlock
+    #./hyprlock
     ./hypridle.nix
     ./hyprland-portal.nix
   ];

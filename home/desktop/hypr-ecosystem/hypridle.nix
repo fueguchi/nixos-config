@@ -7,7 +7,7 @@
       general = {
         lock_cmd = "pidoff hyprlock || hyprlock";
         before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "hyprctl dispatch dpms on"
+        after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       listener = [
         {

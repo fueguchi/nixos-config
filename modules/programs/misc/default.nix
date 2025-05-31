@@ -8,6 +8,7 @@
     rofi
     pywal
     vscode
+    gnome-font-viewer
     ffmpeg-full
   ]) ++ (with pkgs-unstable; [
     spotify

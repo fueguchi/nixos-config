@@ -1,8 +1,5 @@
 # My NixOS configuration
 > [!CAUTION]
-> This configuration is not meant to use is another hardware than mine.
-> Trying to build and deploy them to other systems without appropriate changes
-> can render your machines unbootable and damage data.
-
-
+> This configuration is not meant to be used with hardware other than mine.
+> Trying to deploy it to other machines without appropriate changes can render your machines unbootable and damage data.
 

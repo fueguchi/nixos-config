@@ -8,6 +8,7 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts
+    mona-sans 
     maple-mono.truetype
   ];
 }

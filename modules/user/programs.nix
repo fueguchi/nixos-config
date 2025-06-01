@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    zed-editor
     nwg-look
     pavucontrol
     nautilus
@@ -9,7 +8,6 @@
     yazi
     blueman
     cava
-    brave
     thunderbird
   ];
 }

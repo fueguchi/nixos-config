@@ -2,6 +2,7 @@
   imports = [
     ./nixvim
     ./misc
+    ./firefox.nix
     #./spicetify.nix
     ./discord.nix
     ./zsh.nix

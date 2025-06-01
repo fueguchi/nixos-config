@@ -2,8 +2,8 @@
 {
   home.pointerCursor = {
     enable = true;
-    package = pkgs.yaru-theme;
-    name = "Yaru-dark";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 24;
     
     gtk.enable = true;
@@ -13,21 +13,15 @@
   gtk = {
     enable = true;
     
-    cursorTheme = {
-      name = "Yaru-dark";
-      package = pkgs.yaru-theme;
-      size = 24; 
-    };
-    
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     }; 
     
     font = {
-      package = pkgs.fira;
-      name = "Fira Sans";
-      #size = "";
+      package = pkgs.mona-sans;
+      name = "Mona Sans";
+      size = 11;
     };
 
     theme = {

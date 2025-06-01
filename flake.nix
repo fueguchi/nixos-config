@@ -11,19 +11,20 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
    
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs-unstable"; 
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs:
-  let
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
-    pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; }; 
-    username = "erik";
-    name = "erik"; 
-  in
+    
+    let 
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = import nixpkgs-unstable { system = "x86_64-linux"; config.allowUnfree = true; }; 
+      username = "erik";
+      name = "erik";
+    in
+
   {
     nixosConfigurations.wired = lib.nixosSystem {
       inherit system;
@@ -33,23 +34,17 @@
         inherit name;
         inherit pkgs-unstable;
       };
+
       modules = [
         ./host/wired/configuration.nix
         nixvim.nixosModules.nixvim
         spicetify-nix.nixosModules.spicetify
         home-manager.nixosModules.default
-      	
         {
           home-manager.users.erik = import ./home/home.nix;
           home-manager.backupFileExtension = "backup-";
         }
-
       ];
-    };
-
-    homeConfigurations."erik@wired" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ ./home/home.nix ];
     };
   };
 }

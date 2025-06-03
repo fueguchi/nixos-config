@@ -5,10 +5,12 @@
     shellAliases = {
       ga = "git add";
       gc = "git commit";
+      gs = "git status";
       ".d" = "cd .dotfiles";
+      ls = "eza --icons -F";
     };
   };
-  programs.zsh.extraInit = ''
+  programs.zsh.interactiveShellInit = ''
     nr() {
       if [ -d "$HOME/.dotfiles" ]; then
         (cd "$HOME/.dotfiles" && sudo nixos-rebuild switch --flake .#)

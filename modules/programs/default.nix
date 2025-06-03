@@ -2,12 +2,8 @@
   imports = [
     ./nixvim
     ./misc
-    ./firefox.nix
-    #./spicetify.nix
-    ./discord.nix
-    ./zsh.nix
-    ./wm.nix
+    ./app
     ./cli.nix
-    ./hyprland.nix
+    ./gnome.nix
   ];
 }

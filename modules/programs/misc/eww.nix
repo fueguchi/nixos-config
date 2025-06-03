@@ -8,6 +8,7 @@
     libdbusmenu-gtk2
     libdbusmenu-gtk3
     libadwaita
+    trayer  
     eww
   ];
 }

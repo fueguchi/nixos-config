@@ -6,6 +6,8 @@
     ./locale.nix
     ./hardware.nix
     ./services.nix
+    ./sound.nix
+    ./utils.nix
     ./xdg.nix
     ./time.nix
     ./network.nix
@@ -14,7 +16,6 @@
     ./intel.nix
     ./power.nix
     ./keyring.nix
-    ./misc.nix
     ./sddm.nix
   ];
 }

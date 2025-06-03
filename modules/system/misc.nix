@@ -15,6 +15,5 @@
     libinput
     libnotify
     libva-utils
-    trayer
   ];
 }

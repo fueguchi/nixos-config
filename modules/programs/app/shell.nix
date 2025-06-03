@@ -6,7 +6,7 @@
       ga = "git add";
       gc = "git commit";
       gs = "git status";
-      ".d" = "cd .dotfiles";
+      ".d" = "cd $HOME/.dotfiles";
       ls = "eza --icons -F";
     };
   };

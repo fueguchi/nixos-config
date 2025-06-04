@@ -3,10 +3,9 @@
 HOST="host/wired"
 PATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
 ROOT="$(dirname "$PATH")"
-GEN_CFG_DIR="../${PATH}/config-generated"
-HW_CONFIG="../${PATH}/${HOST}/hardware-configuration.nix"
-HW_CONFIG_DIR="../${PATH}/${HOST}"
-DOTFILES="../${PATH}"
+GEN_CFG_DIR="${ROOT}/config-generated"
+HW_CONFIG="${ROOT}/${HOST}/hardware-configuration.nix"
+HW_CONFIG_DIR="${ROOT}/${HOST}"
 
 if [[ $UID != 0 ]]; then 
   echo "This script requires root privileges."
@@ -44,6 +43,6 @@ fi
 move_hardware_config
 
 rm -rf "${CFG_DIR}"
-cd "${DOTFILES}"
+cd "${ROOT}"
 sudo nixos-rebuild switch --flake .#
 

@@ -17,5 +17,6 @@
     ./power.nix
     ./keyring.nix
     ./sddm.nix
+    ./shell.nix
   ];
 }

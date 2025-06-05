@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
     extraConfigLua = ''
@@ -12,6 +13,13 @@
       expandtab = true;
       autoindent = true;
       smartindent = true;
+    };
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy = {
+        enable = true;
+        package = pkgs.wl-clipboard;
+      };
     };
   };
 }

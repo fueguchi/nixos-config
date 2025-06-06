@@ -14,6 +14,7 @@
         -- Available modes: foreground, background
         mode     = 'background'; -- Set the display mode.
         }
-    ''
-  }
+      }      
+    '';
+  };
 }

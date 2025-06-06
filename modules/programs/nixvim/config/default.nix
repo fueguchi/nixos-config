@@ -7,6 +7,7 @@
       pywal.setup()
     '';
     opts = {
+      termguicolors = true;
       number = true;
       tabstop = 2;
       shiftwidth = 2;

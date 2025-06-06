@@ -2,6 +2,7 @@
   imports = [
     ./neocord.nix
     ./lualine.nix
+    ./colorizer.nix
   ];
   programs.nixvim = {
     extraConfigLua = ''

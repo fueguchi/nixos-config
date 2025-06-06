@@ -56,7 +56,7 @@ git_safe_directory () {
   fi
 }
 
-mkdir $HOME/.config/.sym # for my wallpaper script 
+
 generate_new_hardware_config
 
 if [[ -e "${HW_CONFIG}" ]]; then

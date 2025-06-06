@@ -5,6 +5,7 @@ set -x
 WAL_SYM="$HOME/.config/.sym/sym.png"
 IMAGE_DIR="$HOME/.wallpapers/"
 THEME_FILE="/tmp/theme_variant"
+LOCAL_PATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
 
 apply_theme () {
   wal --cols16 -n -i "${WAL_SYM}"
@@ -34,7 +35,7 @@ for img in "${images[@]}"; do
   image_list+=$(basename "$img" | cut -d. -f1)"\x00icon\x1f${img}\n"
 done
 
-selected_image=$(printf '%b' "$image_list" | rofi -dmenu -theme ~/.config/rofi/wallpaper-select.rasi -p "Select wallpaper")
+selected_image=$(printf '%b' "$image_list" | rofi -dmenu -theme ${LOCAL_PATH}/rofi-themes/glassy/wallpaper-select.rasi -p "Select wallpaper")
 
 selected_image_path=""
 for img in "${images[@]}"; do 

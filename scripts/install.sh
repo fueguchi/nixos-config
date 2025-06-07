@@ -65,4 +65,3 @@ fi
 move_hardware_config
 
 sudo nixos-rebuild switch --flake .#
-exit 1 

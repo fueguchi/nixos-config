@@ -1,11 +1,6 @@
 { pkgs, ... }:
 {
   programs.nixvim = {
-    extraConfigLua = ''
-      local pywal = require('pywal')
-
-      pywal.setup()
-    '';
     opts = {
       termguicolors = true;
       number = true;

@@ -54,28 +54,33 @@
       # scroll through existing workspaces
       "SUPER, mouse_down, workspace, e+1"
       "SUPER, mouse_up, workspace, e-1"
-    ];
+      ];
 
       bindm = [
       # move/resize windows
       "SUPER, mouse:272, movewindow"
       "SUPER, mouse:273, resizewindow"
-    ];
+      ];
 
       bindel = [
       # laptop multimedia keys
-      ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-      ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume 15"
+      ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -15"
+      ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+      ",XF86MonBrightnessUp, exec, swayosd-client --brightness +10"
+      ",XF86MonBrightnessDown, exec, swayosd-client --brightness -10"
 
       # requires playerctl
       ", XF86AudioNext, exec, playerctl next"
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay, exec, playerctl play-pause"
       ", XF86AudioPrev, exec, playerctl previous"
-    ];
+      ];
+
+      bindrl = [
+      "CAPS, CAPS_LOCK, exec, swayosd-client --caps-lock-led input1::capslock"
+      ];
+
   };
 }

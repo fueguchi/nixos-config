@@ -12,12 +12,11 @@
       telescope-nvim
       neocord
       vim-suda
-      pywal-nvim
       yuck-vim
       lualine-nvim
       nvim-autopairs
       nvim-colorizer-lua
     ];
-    colorscheme = "pywal";
+    colorscheme = "pywal16";
   };
 }

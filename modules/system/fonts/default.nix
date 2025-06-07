@@ -10,5 +10,6 @@
     noto-fonts
     mona-sans 
     maple-mono.truetype
+    ubuntu-sans
   ];
 }

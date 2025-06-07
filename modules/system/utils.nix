@@ -16,5 +16,7 @@
     libnotify
     libva-utils
     trayer
+    playerctl
+    zoxide
   ];
 }

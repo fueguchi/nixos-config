@@ -115,5 +115,6 @@ in
 {
   home.file = {
     ".config/wal/templates/hypr.conf".text = ''${hypr-colors}'';
+    ".config/btop/templates/btop".text = ''${btop-colors}'';
   };
 }

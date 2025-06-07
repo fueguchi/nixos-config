@@ -1,5 +1,6 @@
 {
   imports = [
+    ./swayosd
     ./app
     ./zathura
   ];

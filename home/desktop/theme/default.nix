@@ -19,9 +19,9 @@
     }; 
     
     font = {
-      package = pkgs.mona-sans;
-      name = "Mona Sans";
-      size = 11;
+      package = pkgs.ubuntu-sans;
+      name = "Ubuntu Sans";
+      size = 12;
     };
 
     theme = {

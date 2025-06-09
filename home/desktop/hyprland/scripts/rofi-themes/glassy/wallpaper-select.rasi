@@ -2,7 +2,7 @@
 
 configuration {
     modi:                        "";
-    font:                        "Liga SFMono Nerd Font 11.5";
+    font:                        "DepartureMono Nerd Font Bold 11.5";
     show-icons:                  true;
     drun-display-format:         "{name}";
     hover-select:                true;
@@ -66,7 +66,7 @@ listview {
     enabled:                     true;
     columns:                     4; /* Number of elements in a row */
     lines:                       2; /* One row */
-    padding:                     20px 30px;
+    padding:                     15px 30px;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

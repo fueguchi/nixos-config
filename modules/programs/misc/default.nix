@@ -5,6 +5,7 @@
     rofi
     ffmpeg-full
     gitui
+    spotify-player
   ]) ++ (with pkgs-unstable; [
     spotify
   ]);

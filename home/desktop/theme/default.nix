@@ -2,8 +2,8 @@
 {
   home.pointerCursor = {
     enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
+    package = pkgs.vanilla-dmz;
+    name = "DMZ-White";
     size = 24;
     
     gtk.enable = true;
@@ -18,11 +18,11 @@
       package = pkgs.papirus-icon-theme;
     }; 
     
-    font = {
-      package = pkgs.ubuntu-sans;
-      name = "Ubuntu Sans";
-      size = 12;
-    };
+   #font = {
+   #  package = pkgs.ubuntu-sans;
+   #  name = "Ubuntu Sans";
+   #  size = 13;
+   #};
 
     theme = {
       package = pkgs.colloid-gtk-theme;

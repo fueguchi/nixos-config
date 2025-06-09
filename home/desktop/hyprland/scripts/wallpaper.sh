@@ -8,7 +8,7 @@ THEME_FILE="/tmp/theme_variant"
 LOCAL_PATH="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
 
 apply_theme () {
-  wal --cols16 -n -i "${WAL_SYM}"
+  wal --cols16 "lighten" -n -i "${WAL_SYM}"
   swaync-client -rs
   eww kill
   eww open bar

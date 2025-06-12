@@ -4,5 +4,6 @@
     pywal16
     eza
     duf
+    speedtest-cli
   ];
 }

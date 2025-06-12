@@ -6,6 +6,7 @@
     python312Full
     libgcc
     gcc_debug
+    go
 
     # \o/
     ccls

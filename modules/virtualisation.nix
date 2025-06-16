@@ -11,16 +11,21 @@
     spice-protocol
     adwaita-icon-theme
   ];
-
+  services = {
+    qemuGuest.enable = true;
+    spice-vdagentd.enable = true;
+  };
+  virtualisation.spiceUSBRedirection.enable = true;
   # manage the virtualisation services
   virtualisation = {
     libvirtd = {
       enable = true;
       qemu = {
+        package = pkgs.qemu_kvm;
+        vhostUserPackages = [ pkgs.virtiofsd ];
         ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull ];
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
   };
-  services.spice-vdagentd.enable = true;
 }

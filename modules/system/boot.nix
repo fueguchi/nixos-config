@@ -1,6 +1,11 @@
 {
   boot = {
-    initrd.kernelModules = [ "i915" ];
+    initrd.kernelModules = [ 
+      "i915"
+    ];
+    kernelParams = [
+      "intel_iommu=on"
+    ];
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {

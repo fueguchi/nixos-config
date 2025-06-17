@@ -1,6 +1,6 @@
 {
   imports = [
-    ./zerotierone.nix
+    ./zerotier.nix
     ./spicetify.nix
     ./hyprland.nix
     ./wm.nix

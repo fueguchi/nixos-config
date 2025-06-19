@@ -6,5 +6,6 @@
     "nm-applet"
     "rfkill unblock bluetooth"
     "eww open bar"
+    "systemctl stop zerotierone"
   ];
 }

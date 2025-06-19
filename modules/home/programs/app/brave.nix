@@ -2,7 +2,7 @@
 {
   programs.chromium = {
     enable = true;
-    package = pkgs.brave; # redundancy for some reason idk 
+    package = pkgs.chromium; # change if u prefer use another chromium based browser 
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden password manager

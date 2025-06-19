@@ -8,8 +8,8 @@
       background_blur 1
     '';
     font = {
-      name = "DepartureMono Nerd Font";
-      size = 12;
+      name = "Liga SFMono Nerd Font";
+      size = 13;
     };
     settings = {
       update_check_interval = 0;

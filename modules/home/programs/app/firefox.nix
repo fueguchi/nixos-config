@@ -1,18 +1,14 @@
 { config, pkgs, ... }:
 {
   programs.firefox = {
-    enable = true;
-     policies = {
-      DisableTelemetry = true;
-      DisableFirefoxStudies = true;
-      DontCheckDefaultBrowser = true;
-      DisablePocket = true;
-  
+     policies = {  
       profiles = {
         erik = {
           id = "0";
           isDefault = true;
           settings = {
+            "widget.use-xdg-desktop-portal.file-picker" = 1;
+            "browser.aboutConfig.mediaffmpeg.vaapi.enabled" = true;
             "apz.overscroll.enabled" = "true";
             "general.smoothScroll" = "true";
             "general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS" = "12";

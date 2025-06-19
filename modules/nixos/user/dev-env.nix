@@ -7,7 +7,7 @@
     libgcc
     gcc_debug
     go
-
+    
     # \o/
     ccls
     cmake

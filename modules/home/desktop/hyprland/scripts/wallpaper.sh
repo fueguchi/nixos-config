@@ -21,7 +21,7 @@ apply_wallpaper (){
   fi
 swww img "$WAL_SYM" \
   --transition-bezier .43,1.19,1,.4 \
-  --transition-fps 120 \
+  --transition-fps 60 \
   --transition-step 90 \
   --transition-type "grow" \
   --transition-duration 0.7 \

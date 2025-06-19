@@ -5,6 +5,7 @@
     rofi
     ffmpeg-full
     gitui
+    chromium
     spotify-player
   ]) ++ (with pkgs-unstable; [
     spotify

@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./programs
-    ./desktop
+    ../modules/home/programs
+    ../modules/home/desktop
   ];
   home = {
     username = "erik";

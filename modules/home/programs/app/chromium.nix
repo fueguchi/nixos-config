@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
+  #home.packages = with pkgs; [ 
+  #  (chromium.override { enableWideVine = true; }) 
+  #];
   programs.chromium = {
     enable = true;
-    package = pkgs.chromium; # change if u prefer use another chromium based browser 
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden password manager

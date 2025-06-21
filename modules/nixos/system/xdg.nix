@@ -9,6 +9,12 @@
     ];
     config.hyprland.preferred = [ "hyprland" "gtk" ];
   };
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+    };
+  };
   environment.systemPackages = with pkgs; [
     xdg-utils
     xdg-user-dirs

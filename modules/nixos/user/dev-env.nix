@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     #lang
-    nodejs_24
     python312Full
     libgcc
     gcc_debug
@@ -15,6 +14,15 @@
     nixd
     nil
 
+    # health care ngl :D
+    git-credential-manager
+    
+    # just for discord badge
+    nodejs_24
+
+    # typescript for ags :)
+    typescript
+    typescript-language-server
   ];
   programs.nix-ld.enable = true;
 }

@@ -6,6 +6,7 @@
     settings = {
       color_theme = "Default";
       theme_background = false;
+      force_tty = true;
     };
   };
 }

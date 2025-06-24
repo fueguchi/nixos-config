@@ -4,9 +4,13 @@
   environment.systemPackages = (with pkgs; [
     rofi
     ffmpeg-full
-    gitui
-    chromium
     spotify-player
+    glib
+    gobject-introspection
+    gjs
+    gtk4
+    gtk4.dev
+    gtk4-layer-shell
   ]) ++ (with pkgs-unstable; [
     spotify
   ]);

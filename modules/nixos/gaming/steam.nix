@@ -10,7 +10,7 @@
     gamemode.enable = true;
     gamescope = { 
       enable = true;
-      #capSysNice = true;
+      capSysNice = true;
     };
   };
   environment.systemPackages = with pkgs; [

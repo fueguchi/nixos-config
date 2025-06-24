@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 {
   programs.firefox = {
-     policies = {  
+    enable = true;
+    policies = {  
       profiles = {
         erik = {
           id = "0";

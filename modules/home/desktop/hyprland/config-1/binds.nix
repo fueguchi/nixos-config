@@ -4,7 +4,7 @@
       # some basic use binds
       "SUPER, E, exec, kitty yazi"
       "SUPER, PRINT, exec, hyprshot -m region --freeze"
-      "SUPER, T, exec, /home/erik/.dotfiles/home/desktop/hyprland/scripts/wallpaper.sh" # unfortunelly i can't write this script (i stole from a guy on reddit) with writeShellScriptBin
+      "SUPER, T, exec, /home/erik/.dotfiles/modules/home/desktop/hyprland/scripts/wallpaper.sh" # unfortunelly i can't write this script with writeShellScriptBin to be more reproducible
       "SUPER, Q, exec, kitty"
       "SUPER, R, exec, rofi -show"
       "SUPER, Y, exec, kitty nvim"

@@ -4,7 +4,7 @@
       force_zero_scaling = true;
     };
     decoration = {
-      rounding = 20;
+      rounding = 5;
       active_opacity = 1;
       inactive_opacity = 1;
 
@@ -19,8 +19,8 @@
 
       blur = {
         enabled = true;
-        size = 5;
-        passes = 2;
+        size = 3;
+        passes = 4;
         vibrancy = 0.1696;
         brightness = 0.8172;
         contrast = 1;

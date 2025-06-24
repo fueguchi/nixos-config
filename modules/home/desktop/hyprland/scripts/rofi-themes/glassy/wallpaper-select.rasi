@@ -2,7 +2,7 @@
 
 configuration {
     modi:                        "";
-    font:                        "DepartureMono Nerd Font Bold 11.5";
+    font:                        "JetBrainsMono Nerd Font Bold 12";
     show-icons:                  true;
     drun-display-format:         "{name}";
     hover-select:                true;
@@ -29,12 +29,12 @@ window {
     transparency:                "real";
     cursor:                      "default";
     spacing:                     0px;
-    border-radius:               5px;
+    border-radius:               20px;
     location:                    center;
     anchor:                      center;
     height:                      70%; 
     width:                       75%;
-    background-color:            #0000001a;
+    background-color:            @background; // #0000001a
     border:                      2px;
     border-color:                #FFFFFF10;
 }

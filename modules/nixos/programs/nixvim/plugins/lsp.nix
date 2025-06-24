@@ -1,9 +1,29 @@
+{ pkgs, ... }:
 {
-  programs.nixvim.extraConfigLua = ''
-    vim.lsp.config('ccls', {
+  programs.nixvim.plugins = {
+    lsp = {
+      enable = true;
+      package = pkgs.vimPlugins.nvim-lspconfig;
+    };
+
+    cmp = {
+      enable = true;
       settings = {
-        ['ccls'] = {},
-      },
-    })
-  '';
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "buffer"; }
+        ];
+      };
+    };
+
+    lspkind.enable = true;
+    
+    treesitter = {
+      enable = true;
+      settings = {
+        ensureInstalled = [ "c" "cpp" ];
+      };
+    };
+    clangd-extensions.enable = true;
+  };
 }

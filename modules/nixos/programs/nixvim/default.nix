@@ -7,15 +7,16 @@
   ];
   programs.nixvim = {
     enable = true;
+    defaultEditor = true;
     extraPlugins = with pkgs.vimPlugins; [
-      transparent-nvim
-      telescope-nvim
-      neocord
-      vim-suda
-      yuck-vim
-      lualine-nvim
       nvim-autopairs
       nvim-colorizer-lua
+      transparent-nvim
+      telescope-nvim
+      lualine-nvim
+      vim-suda
+      yuck-vim
+      neocord
     ];
     colorscheme = "pywal16";
   };

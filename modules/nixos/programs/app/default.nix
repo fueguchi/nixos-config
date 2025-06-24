@@ -1,6 +1,5 @@
 {
   imports = [
-    ./firefox.nix
     ./zerotier.nix
     ./spicetify.nix
     ./hyprland.nix

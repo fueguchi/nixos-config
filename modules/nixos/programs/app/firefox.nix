@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
   programs.firefox = {
-    enable = true;
-
     policies = {
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
@@ -11,6 +9,7 @@
       SearchBar = "unified";
 
       Preferences = {
+        "ui.prefersReducedMotion" = 0;
         "browser.cache.memory.enable" = true;
         "browser.cache.memory.capacity" = 512000;
         "browser.cache.disk.enable" = false;

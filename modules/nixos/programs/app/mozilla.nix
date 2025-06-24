@@ -1,5 +1,8 @@
 { pkgs, pkgs-unstable, ... }:
 {
+  imports = [
+    ./firefox.nix
+  ];
   programs = {
     firefox = {
       enable = true;

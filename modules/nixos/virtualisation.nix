@@ -10,6 +10,7 @@
     spice-gtk
     spice-protocol
     adwaita-icon-theme
+    hwloc
   ];
   services = {
     qemuGuest.enable = true;
@@ -25,6 +26,7 @@
         vhostUserPackages = [ pkgs.virtiofsd ];
         ovmf.enable = true;
         ovmf.packages = [ pkgs.OVMFFull.fd ];
+        swtpm.enable = true;
       };
     };
   };

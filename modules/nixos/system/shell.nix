@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -7,6 +7,7 @@
       gc = "git commit";
       gs = "git status";
       ".d" = "cd $HOME/.dotfiles";
+      ez = "eza --icons";
     };
   };
   programs.zsh.interactiveShellInit = ''
@@ -14,7 +15,15 @@
       if [ -d "$HOME/.dotfiles" ]; then
         (cd "$HOME/.dotfiles" && sudo nixos-rebuild switch --flake .#)
       else
-        echo "Error: ~/.dotfiles directory not found." >&2
+        echo "Error: ~/.dotfiles not found." >&2
+        return 1
+      fi
+    }
+    hmsw() {
+      if [ -d "$HOME/.dotfiles" ]; then
+        (cd "$HOME/.dotfiles" && home-manager switch --flake .#erik@wired)
+      else
+        echo "Error: ~/.dotfiles not found." >&2
         return 1
       fi
     }

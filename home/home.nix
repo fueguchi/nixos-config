@@ -3,6 +3,7 @@
   imports = [
     ../modules/home/programs
     ../modules/home/desktop
+    ../modules/home/system
   ];
   home = {
     username = "erik";

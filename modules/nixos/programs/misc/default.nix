@@ -4,6 +4,7 @@
   environment.systemPackages = (with pkgs; [
     rofi
     ffmpeg-full
+    gimp
     spotify-player
     glib
     gobject-introspection

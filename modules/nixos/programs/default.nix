@@ -1,6 +1,5 @@
 {
   imports = [
-    ./nixvim
     ./misc
     ./app
     ./cli.nix

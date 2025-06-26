@@ -15,9 +15,12 @@
 
     ags.url = "github:aylur/ags";
     ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    astal.url = "github:aylur/astal";
+    astal.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, astal, ags, ... } @ inputs:
     let 
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -33,6 +36,7 @@
       name = "erik";
     in
   {
+
     nixosConfigurations.wired = lib.nixosSystem {
       inherit system;
       specialArgs = {
@@ -43,18 +47,42 @@
       };
       modules = [
         ./host/wired/configuration.nix
-        nixvim.nixosModules.nixvim
-        spicetify-nix.nixosModules.spicetify
       ];
     };
+
     homeConfigurations."erik@wired" = home-manager.lib.homeManagerConfiguration {
-      modules = [ ./home/home.nix ];
       pkgs = import nixpkgs { inherit system; };
       extraSpecialArgs = { 
         inherit pkgs-unstable;
         inherit inputs;
         inherit system;
         };
+      modules = [
+        ./home/home.nix
+        nixvim.homeModules.nixvim
+        spicetify-nix.homeManagerModules.spicetify
+      ];
+    };
+
+    packages.${system}.agsApp = pkgs.stdenvNoCC.mkDerivation rec {
+      name = "my-ags-config";
+      src = ./home/programs/ags/config;
+
+      nativeBuildInputs = [
+        ags.packages.${system}.default
+        pkgs.wrapGAppsHook
+        pkgs.gobject-instrospection
+      ];
+
+      buildInputs = with astal.packages.${system}; [
+        astal3
+        io
+      ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        ags bundle app.ts $out/bin/${name}
+      '';
     };
   };
 }

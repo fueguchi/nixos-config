@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
   home.pointerCursor = {
     enable = true;
     package = pkgs.vanilla-dmz;

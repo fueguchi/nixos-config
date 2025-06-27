@@ -1,13 +1,10 @@
 { pkgs, pkgs-unstable, ... }:
 {
-  imports = [
-    ./firefox.nix
-  ];
   programs = {
-    firefox = {
-      enable = true;
-      package = pkgs.firefox;
-    };
+    #firefox = {
+    #  enable = true;
+    #  package = pkgs.librewolf;
+    #};
     thunderbird = {
       enable = true;
       package = pkgs.thunderbird;

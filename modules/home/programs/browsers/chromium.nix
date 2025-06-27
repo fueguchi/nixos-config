@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
     extensions = [
-      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+      { id = "ddkjiahejlhfcafbddmgiahcphecmpfh"; } # ublock origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden password manager
       { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # dark reader
       { id = "dlnejlppicbjfcfcedcflplfjajinajd"; } # bonjour startpage

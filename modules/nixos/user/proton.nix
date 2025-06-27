@@ -2,6 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     protonvpn-gui
-    #protonmail-desktop
+    protonmail-desktop
   ];
 }

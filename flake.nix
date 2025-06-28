@@ -69,19 +69,28 @@
       src = ./home/programs/ags/config;
 
       nativeBuildInputs = [
-        ags.packages.${system}.default
+        pkgs.esbuild
         pkgs.wrapGAppsHook
         pkgs.gobject-instrospection
       ];
 
-      buildInputs = with astal.packages.${system}; [
-        astal3
-        io
+      buildInputs = [
+        pkgs.gjs
+        pkgs.glib
+        pkgs.gtk4
+        astal.packages.${system}.io
+        astal.packages.${system}.astal4
       ];
 
       installPhase = ''
         mkdir -p $out/bin
-        ags bundle app.ts $out/bin/${name}
+       
+        esbuild \
+          --bundle src/app.js \
+          --outfile=$out/bin/my-shell \
+          --format=esm \
+          --sourcemap=inline \
+          --ternal:gi//\*
       '';
     };
   };

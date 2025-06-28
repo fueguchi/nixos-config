@@ -19,8 +19,8 @@
 
       blur = {
         enabled = true;
-        size = 1;
-        passes = 1;
+        size = 3;
+        passes = 4;
         vibrancy = 0.1696;
         brightness = 0.8172;
         contrast = 1;

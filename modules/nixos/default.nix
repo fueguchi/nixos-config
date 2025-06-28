@@ -2,8 +2,7 @@
   imports = [
     ./programs
     ./system
-    ./steam.nix
-    ./gaming.nix
+    ./gaming
     ./user
     ./nix.nix
     ./virtualisation.nix

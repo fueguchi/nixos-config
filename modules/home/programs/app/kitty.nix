@@ -4,7 +4,7 @@
     enable = true;
     extraConfig = ''
       include ~/.cache/wal/colors-kitty.conf
-      background_opacity 0.85
+      background_opacity 1
       background_blur 1
     '';
     font = {

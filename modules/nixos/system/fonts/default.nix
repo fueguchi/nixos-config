@@ -11,6 +11,5 @@
     noto-fonts
     fira-code
     mona-sans
-    dm-mono
   ];
 }

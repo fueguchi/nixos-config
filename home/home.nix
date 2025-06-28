@@ -1,10 +1,15 @@
 { inputs, pkgs, config, ... }:
 {
   imports = [
-    ../modules/home/programs
+    ../modules/home/cli
     ../modules/home/desktop
     ../modules/home/system
   ];
+
+  spicetify.enable = false;
+  spotify.enable = true;
+  hyprland.enable = true;
+  
   home = {
     username = "erik";
     homeDirectory = "/home/erik";
@@ -14,7 +19,6 @@
     allowUnfree = true;
     chromium.enableWideVine = true;
   };
-
   home.stateVersion = "25.05";
   programs.home-manager.enable = true;
 }

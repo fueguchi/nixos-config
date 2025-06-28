@@ -1,7 +1,11 @@
 {
   imports = [
-    ./hyprland
+    ./swayosd
+    ./zathura
+    ./browsers
     ./theme
-    ./hypr-ecosystem
+    ./hypr
+    ./ags
+    ./spotify.nix
   ];
 }

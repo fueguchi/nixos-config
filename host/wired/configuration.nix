@@ -7,7 +7,9 @@
 
   intel.enable = true;
   laptop.enable = true;
-  keyring.enable = true; # if you use a DE just disable this
+  keyring.enable = true; 
+  gaming.enable = true;
+  steam.enable = false;
 
   users.users.erik = {
     isNormalUser = true;

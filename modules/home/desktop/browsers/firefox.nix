@@ -67,6 +67,17 @@
               iconMapObj."16" = "https://www.google.com/favicon.ico"; 
               definedAliases = ["@gg"];
             };
+            home-manager-options = {
+              name = "Home-manager options";
+              urls = [{
+                template = "https://home-manager-options.extranix.com/";
+                params = [
+                  { name = "query"; value = "{searchTerms}"; }
+                ];
+              }];
+              icon = "https://home-manager-options.extranix.com/favicon.ico";
+              definedAliases = ["@hm"];
+            };
           };
         };
         bookmarks = {
@@ -76,11 +87,11 @@
             bookmarks = [{
               name = "Nix";
               bookmarks = [
-                { name = "homepage"; url = "https://nixos.org/"; }
-                { name = "wiki"; url = "https://wiki.nixos.org/"; tags = ["wiki" "nix"]; }
-                { name = "pkgs"; url = "https://search.nixos.org/packages"; }
-                { name = "options"; url = "https://search.nixos.org/options"; }
-                { name = "hm options"; url = "https://nix-community.github.io/home-manager/options.xhtml"; }
+                { name = "Homepage"; url = "https://nixos.org/"; }
+                { name = "Nix Manual"; url = "https://nix.dev/manual/nix/2.28/"; }
+                { name = "Nix First Steps"; url = "https://nix.dev/tutorials/first-steps/"; }
+                { name = "Nixpkgs Manual"; url = "https://nixos.org/manual/nixpkgs/stable/"; }
+                { name = "NixOS Manual"; url = "https://nixos.org/manual/nixos/stable/"; }
                 ];
             }];
           }
@@ -111,7 +122,8 @@
         "general.autoScroll" = true;
         "sidebar.animation.expand-on-hover.duration-ms" = 200;
         "sidebar.main.tools" = "history,bookmarks";
-        "browser.toolbars.bookmarks.visibility" = "always"; 
+        "browser.toolbars.bookmarks.visibility" = "always";
+
         # enable webgl
         "webgl.disabled" = false;
 
@@ -130,7 +142,6 @@
         "general.smoothScroll" = true;
         "toolkit.cosmeticAnimations.enabled" = false;
 
-        
         # Disable telemetry & reporting
         "datareporting.healthreport.uploadEnabled" = false;
         "toolkit.telemetry.enabled" = false;

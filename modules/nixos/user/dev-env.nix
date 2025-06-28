@@ -23,6 +23,10 @@
     # typescript for ags :)
     typescript
     typescript-language-server
+
+    # more ags dependencies
+    gjs
+
   ];
   programs.nix-ld.enable = true;
 }

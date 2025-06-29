@@ -11,4 +11,7 @@
   };
   programs.noisetorch.enable = true;
   programs.noisetorch.package = pkgs.noisetorch;
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+  ];
 }

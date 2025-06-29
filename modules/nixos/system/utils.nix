@@ -17,7 +17,5 @@
     libva-utils
     trayer
     playerctl
-    zoxide
-    _7zz
   ];
 }

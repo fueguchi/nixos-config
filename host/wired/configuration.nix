@@ -8,12 +8,16 @@
   intel.enable = true;
   laptop.enable = true;
   keyring.enable = true; # if you use a DE just disable this
+  gaming.enable = true;
+  steam.enable = false;
+  vm.enable = false;
 
   users.users.erik = {
     isNormalUser = true;
     description = "erik";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "video" "input" ];
+    extraGroups = [ "gamemode" "networkmanager" "wheel" "libvirtd" "video" "input" ];
   };
+
   console.keyMap = "br-abnt2";
   programs.git.enable = true;
   programs.git.config.credential.helper = "libsecret";

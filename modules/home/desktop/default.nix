@@ -1,7 +1,24 @@
+{ pkgs, ... }:
 {
   imports = [
-    ./hyprland
+    ./hypr
     ./theme
-    ./hypr-ecosystem
+    ./ags
+    ./swayosd
+    ./zathura
+    ./nixvim
+    ./chromium.nix
+    ./firefox.nix
+    ./spotify.nix
+    ./keyring.nix
+    ./proton.nix
+    ./bluetooth.nix
+    ./gnome.nix
+    ./discord.nix
+    ./thunderbird.nix
+  ];
+
+  home.packages = with pkgs; [
+    gimp
   ];
 }

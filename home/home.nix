@@ -1,10 +1,15 @@
 { inputs, pkgs, config, ... }:
 {
   imports = [
-    ../modules/home/programs
+    ../modules/home/cli
     ../modules/home/desktop
-    ../modules/home/system
   ];
+
+  spotifyconf = {
+    spotify.enable = true;
+    spicetify.enable = false;
+  };
+
   home = {
     username = "erik";
     homeDirectory = "/home/erik";

@@ -21,5 +21,8 @@
     gvfs.enable = true;
     xserver.displayManager.lightdm.enable = false;
     xserver.displayManager.gdm.enable = false;
+    gnome.sushi.enable = true;
+    blueman.enable = true;
+    zerotierone.enable = true;
   };
 }

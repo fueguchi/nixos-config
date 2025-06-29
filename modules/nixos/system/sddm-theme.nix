@@ -1,15 +1,17 @@
 { pkgs }:
 
 pkgs.stdenv.mkDerivation {
-  name = "sddm-theme";
+  pname = "sddm-theme-where-is-my-sddm-theme";
+  version = "v1.12.0";
+
   src = pkgs.fetchFromGitHub {
     owner = "stepanzubkov";
     repo = "where-is-my-sddm-theme";
-    rev = "025705b3296d478e74d1041e4495e7a4ae466f92";
-    sha256 = "sha256-RIVvgPeRYZhnwSKqocZ0b8BgA5a1YVU8IZD81Hc8t5s=";
+    rev = "e12d4c3fe074ecef650b139c2626785d967bd11";
+    sha256 = "sha256-D2ojqA8odNWVcPqNuHcmH6HojsmhJtiZyAS3Xp/6jHg=";
   };
   installPhase = ''
-    mkdir -p $out
-    cp -R ./* $out/
+    mkdir -p $out/share/sddm/themes/where_is_my_sddm_theme
+    cp -R $src/where_is_my_sddm_theme/* $out/share/sddm/themes/where_is_my_sddm_theme/
   '';
 }

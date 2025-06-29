@@ -61,5 +61,7 @@
       "gsettings set org.gnome.desktop.interface cursor-size '${toString config.home.pointerCursor.size}'"
     ];
   };
-
+  home.packages = with pkgs; [
+    nwg-look
+  ];
 }

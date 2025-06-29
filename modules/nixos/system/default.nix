@@ -1,15 +1,14 @@
 {
   imports = [
     ./fonts
-    ./boot.nix
-    ./environment.nix
-    ./locale.nix
+    ./boot.nix 
+    ./environment.nix 
+    ./locale.nix 
     ./hardware.nix
     ./services.nix
     ./sound.nix
     ./utils.nix
     ./xdg.nix
-    ./time.nix
     ./network.nix
     ./zram.nix
     ./security.nix

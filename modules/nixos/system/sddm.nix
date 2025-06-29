@@ -4,13 +4,11 @@
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtgraphicaleffects
   ];
-  services = {
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-      #package = pkgs.kdePackages.sddm;
-      theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
-    };
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "where-is-my-sddm-theme";
+    extraPackages = [ (pkgs.callPackage ./sddm-theme.nix {}) ];
   };
   programs.uwsm = {
     enable = true;

@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyprland.settings.animations = {
-    enabled = yes;
+    enabled = true;
     bezier = [ "overshot,0.13,0.99,0.29,1.1" ];
     animation = [
       "windows,1,6,overshot,slide"

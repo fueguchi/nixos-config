@@ -1,6 +1,6 @@
 {
   wayland.windowManager.hyrpland.settings.animations = {
-    enabled = yes;
+    enabled = true;
     bezier = [
       "myBezier, 0.05, 0.9, 0.1, 1.05"
       "pace,0.46, 1, 0.29, 0.99"

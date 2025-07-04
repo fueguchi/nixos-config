@@ -7,8 +7,8 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "where-is-my-sddm-theme";
-    extraPackages = [ (pkgs.callPackage ./sddm-theme.nix {}) ];
+    #theme = "where-is-my-sddm-theme";
+    #extraPackages = [ (pkgs.callPackage ./sddm-theme.nix {}) ];
   };
   programs.uwsm = {
     enable = true;

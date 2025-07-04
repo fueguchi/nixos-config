@@ -11,9 +11,7 @@
         intel-media-driver
         intel-media-sdk
         intel-compute-runtime
-        intel-vaapi-driver
         libva
-        intel-ocl
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [  intel-vaapi-driver ];
     };
@@ -21,7 +19,6 @@
       vulkan-loader
       vulkan-validation-layers
       vulkan-tools
-      intel-gmmlib
     ];
     environment.variables = {
       LIBVA_DRIVER_NAME = "iHD";

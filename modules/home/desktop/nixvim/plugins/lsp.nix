@@ -4,6 +4,9 @@
     lsp = {
       enable = true;
       package = pkgs.vimPlugins.nvim-lspconfig;
+      servers = {
+        clangd.enable = true;
+      };
     };
 
     cmp = {

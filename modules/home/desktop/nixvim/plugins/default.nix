@@ -5,6 +5,7 @@
     ./lualine.nix
     ./colorizer.nix
     ./lsp.nix
+    ./nvim-tree.nix
   ];
   programs.nixvim = {
     extraConfigLua = ''

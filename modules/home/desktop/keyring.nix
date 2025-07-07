@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   services.gnome-keyring = {
-    enable = true;
-    components = [ "ssh" "secrets" ];
+    components = [ "pkcs11" "ssh" "secrets" ];
   };
 }

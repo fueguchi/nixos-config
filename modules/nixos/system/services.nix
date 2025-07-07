@@ -17,7 +17,10 @@
         accelProfile = "flat";
       };
     };
-    dbus = { packages = with pkgs; [ dconf]; };
+    dbus = {
+      enable = true;
+      packages = with pkgs; [ dconf];
+    };
     gvfs.enable = true;
     xserver.displayManager.lightdm.enable = false;
     xserver.displayManager.gdm.enable = false;

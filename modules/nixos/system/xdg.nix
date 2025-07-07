@@ -6,6 +6,7 @@
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
       xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gnome
     ];
     config.hyprland.preferred = [ "hyprland" "gtk" ];
   };

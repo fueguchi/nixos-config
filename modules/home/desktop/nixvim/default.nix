@@ -12,7 +12,6 @@
       nvim-autopairs
       nvim-colorizer-lua
       transparent-nvim
-      lualine-nvim
       vim-suda
       yuck-vim
       neocord

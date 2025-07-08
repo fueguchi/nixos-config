@@ -6,19 +6,11 @@
       package = pkgs.vimPlugins.nvim-lspconfig;
       servers = {
         clangd.enable = true;
+        lua_ls.enable = true;
+        nixd.enable = true;
       };
     };
-
-    cmp = {
-      enable = true;
-      settings = {
-        sources = [
-          { name = "nvim_lsp"; }
-          { name = "buffer"; }
-        ];
-      };
-    };
-
+  
     lspkind.enable = true;
     
     treesitter = {

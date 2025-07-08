@@ -9,7 +9,7 @@ pkgs,
       -- The setup config table shows all available config options with their default values:
       require("neocord").setup({
       -- General options
-      logo                = "https://raw.githubusercontent.com/fueguchi/nixos-config/refs/heads/main/modules/nixos/programs/nixvim/plugins/etc/img-for-neocord/copland-os.png",                     -- "auto" or url
+      logo                = "https://raw.githubusercontent.com/fueguchi/nixos-config/refs/heads/main/modules/nixos/programs/nixvim/plugins/etc/img-for-neocord/copland-os.png",                           
       logo_tooltip        = nil,                        -- nil or string
       main_image          = "language",                 -- "language" or "logo"
       client_id           = "1157438221865717891",      -- Use your own Discord application client id (not recommended)

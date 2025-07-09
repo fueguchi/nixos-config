@@ -1,9 +1,4 @@
 {
-config, 
-pkgs, 
-...
-}: 
-{
   programs.nixvim = {
     extraConfigLua = ''
       -- The setup config table shows all available config options with their default values:

@@ -20,6 +20,7 @@
   };
 
   home.packages = with pkgs; [
+    universal-ctags
     ccls
     nixd
     typescript-language-server

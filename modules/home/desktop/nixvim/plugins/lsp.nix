@@ -10,15 +10,23 @@
         nixd.enable = true;
       };
     };
-  
-    lspkind.enable = true;
-    
+    emmet = {
+      enable = true;
+      package = pkgs.vimPlugins.emmet-vim;
+      autoLoad = true;
+    };
+    lspkind = {
+      enable = true;
+      package = pkgs.vimPlugins.lspkind-nvim;
+    };
+
     treesitter = {
       enable = true;
       settings = {
-        ensureInstalled = [ "c" "cpp" ];
+        ensureInstalled = [ "c" "cpp" "javascript" "typescript" "nix" "html" "css" ];
       };
     };
+
     clangd-extensions.enable = true;
   };
 }

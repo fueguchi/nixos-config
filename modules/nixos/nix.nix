@@ -15,6 +15,7 @@
   environment.systemPackages = [ 
     pkgs.nix-prefetch
     pkgs.nix-prefetch-github
+    pkgs.nix-index
   ];
   nixpkgs.config.allowUnfree = true;
 }

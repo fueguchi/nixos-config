@@ -1,12 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
+  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
   services.pipewire = {
     enable = true;
     pulse.enable = true;
     audio.enable = true;
-    alsa = {
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    lowLatency = {
       enable = true;
-      support32Bit = true;
+      quantum = 64;
+      rate = 48000;
     };
   };
   programs.noisetorch.enable = true;

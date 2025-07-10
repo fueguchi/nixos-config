@@ -3,16 +3,15 @@
   imports = [
     ./system
     ./nix.nix
-    ./virtualisation.nix
-    ./gaming.nix
-    ./steam.nix
-    ./programs.nix
     ./dev.nix
+    ./gaming.nix
+    ./programs.nix
+    ./virtualisation.nix
   ];
 
   environment.systemPackages = with pkgs; [
     swaynotificationcenter
-    rofi
+    rofi-wayland
     libayatana-appindicator
     libayatana-indicator
     libappindicator

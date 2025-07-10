@@ -35,7 +35,7 @@ for img in "${images[@]}"; do
   image_list+=$(basename "$img" | cut -d. -f1)"\x00icon\x1f${img}\n"
 done
 
-selected_image=$(printf '%b' "$image_list" | rofi -dmenu -theme ${LOCAL_PATH}/rofi-themes/glassy/wallpaper-select.rasi -p "Select wallpaper")
+selected_image=$(printf '%b' "$image_list" | rofi -dmenu -theme ${LOCAL_PATH}/rofi-themes/glassy-no-rounding/wallpaper-select.rasi -p "Select wallpaper")
 
 selected_image_path=""
 for img in "${images[@]}"; do 

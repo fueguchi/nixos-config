@@ -1,6 +1,7 @@
+{ pkgs, ... }:
 {
   wayland.windowManager.hyprland.settings.exec-once = [
-    "gnome-keyring-daemon --start --components=secrets"
+    #"gnome-keyring-daemon --start --components=secrets"
     "swww-daemon"
     "swww & waypaper --restore"
     "nm-applet"

@@ -1,6 +1,6 @@
 {
   # select animation configuration :)
   imports = [
-    ./dreamy.nix
+    ./default-config.nix
   ];
 }

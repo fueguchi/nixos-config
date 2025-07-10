@@ -4,7 +4,7 @@
       force_zero_scaling = true;
     };
     decoration = {
-      rounding = 5;
+      rounding = 0;
       active_opacity = 1;
       inactive_opacity = 1;
 
@@ -19,12 +19,12 @@
 
       blur = {
         enabled = true;
-        size = 3;
-        passes = 4;
+        size = 4;
+        passes = 2;
         vibrancy = 0.1696;
         brightness = 0.8172;
-        contrast = 1;
-        noise = 0.0200;
+        #contrast = 1;
+        noise = 0.0100;
         new_optimizations = true;
         ignore_opacity = true;
         xray = false;
@@ -57,7 +57,7 @@
       gaps_in = 5;
       gaps_out = 10;
       border_size = 2;
-      "col.active_border" = "$color0 $color1 45deg";
+      "col.active_border" = "$color1 45deg";
       "col.inactive_border" = "$color0";
       resize_on_border = false;
       allow_tearing = false;

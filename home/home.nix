@@ -6,13 +6,13 @@
   ];
 
   spotifyconf = {
-    spotify.enable = true;
-    spicetify.enable = false;
+    spotify.enable = false;
+    spicetify.enable = true;
   };
 
   home = {
     username = "erik";
-    homeDirectory = "/home/erik";
+    homeDirectory = "/home/erik";  
   };
   
   nixpkgs.config = {

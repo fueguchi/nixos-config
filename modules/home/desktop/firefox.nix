@@ -92,6 +92,7 @@
                 { name = "Nix First Steps"; url = "https://nix.dev/tutorials/first-steps/"; }
                 { name = "Nixpkgs Manual"; url = "https://nixos.org/manual/nixpkgs/stable/"; }
                 { name = "NixOS Manual"; url = "https://nixos.org/manual/nixos/stable/"; }
+                { name = "Nixvim Manual"; url = "https://nix-community.github.io/nixvim/"; }
                 ];
             }];
           }
@@ -104,9 +105,22 @@
                 { name = "dicionário de português"; url = "https://www.dicio.com.br/"; }
               ];
               }];
+          }
+          {
+            toolbar = true;
+            bookmarks = [{
+              name = "Wiki";
+              bookmarks = [
+                { name = "Wikipedia"; url = "https://wikipedia.org/"; }
+                { name = "Arch Wiki"; url = "https://wiki.archlinux.org/"; }
+                { name = "Hypr Wiki"; url = "https://wiki.hypr.land/"; }
+              ];
+            }];
           }];
         };
       settings = {
+        # enable css
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # file picker
         "widget.use-xdg-desktop-portal.file-picker" = 1;
 

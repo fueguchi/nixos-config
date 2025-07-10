@@ -15,13 +15,13 @@
 
       {
         enable = true;
-        theme = spicePkgs.themes.comfy;
+        theme = spicePkgs.themes.text;
         enabledExtensions = with spicePkgs.extensions; [
           # add extensions to spicetify
         ];
         colorScheme = "Spotify";
         experimentalFeatures = true;
       });
-    home.packages = lib.mkIf config.spotifyconf.spotify.enable (with pkgs-unstable; [ spotify ]);
+    home.packages = lib.mkIf config.spotifyconf.spotify.enable (with pkgs-unstable; [ spotify-player spotify ]);
   };
 }

@@ -7,6 +7,7 @@
     extraPackages = with pkgs-unstable; [
       inputs.ags.packages.${system}.battery
       inputs.ags.packages.${system}.astal4
+      astal.apps
       fzf
       gjs
       glib

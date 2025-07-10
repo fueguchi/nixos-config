@@ -7,8 +7,8 @@
   };
   home.pointerCursor = {
     enable = true;
-    package = pkgs.vanilla-dmz;
-    name = "DMZ-White";
+    package = pkgs.yaru-theme;
+    name = "Yaru-dark";
     size = 24;
     
     gtk.enable = true;

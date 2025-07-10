@@ -2,6 +2,13 @@
 {
   programs.element-desktop = {
     enable = true;
-    package = pkgs.element-desktop;
+  };
+
+  xdg.desktopEntries."element-desktop" = {
+    name = "Element";
+    exec = "${pkgs.element-desktop}/bin/element-desktop --password-store=gnome-libsecret";
+    icon = "element-desktop";
+    terminal = false;
+    type = "Application";
   };
 }

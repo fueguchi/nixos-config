@@ -16,9 +16,14 @@
     ./gnome.nix
     ./discord.nix
     ./thunderbird.nix
+    ./element.nix
   ];
 
   home.packages = with pkgs; [
+    blender
     gimp
+    yt-dlp
+    libreoffice
+    sqlitebrowser
   ];
 }

@@ -11,8 +11,8 @@
   vm.enable = false;
   gaming = {
     osu.enable = true;
-    steam.enable = true;
-    r2mod.enable = true;
+    steam.enable = false;
+    r2mod.enable = false;
     heroic.enable = true;
     gamemode.enable = true;
     minecraft.enable = false;

@@ -5,7 +5,7 @@
     ../modules/home/desktop
   ];
 
-  spotifyconf = {
+  media = {
     spotify.enable = false;
     spicetify.enable = true;
   };

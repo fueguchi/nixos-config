@@ -23,7 +23,7 @@
     blender
     gimp
     yt-dlp
-    libreoffice
     sqlitebrowser
+    telegram-desktop
   ];
 }

@@ -3,6 +3,7 @@
   services = {
     xserver = {
       enable = true;
+      excludePackages = [ pkgs.xterm ];
       xkb = {
         layout = "br";
         variant = "abnt2";

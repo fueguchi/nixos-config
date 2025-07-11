@@ -21,5 +21,7 @@
     libadwaita
     trayer  
     eww
+    ffmpeg-full
+    wf-recorder
   ];
 }

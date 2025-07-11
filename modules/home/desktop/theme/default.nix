@@ -7,8 +7,8 @@
   };
   home.pointerCursor = {
     enable = true;
-    package = pkgs.yaru-theme;
-    name = "Yaru-dark";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 24;
     
     gtk.enable = true;
@@ -19,15 +19,15 @@
     enable = true;
     
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     }; 
-    
-   #font = {
-   #  package = pkgs.ubuntu-sans;
-   #  name = "Ubuntu Sans";
-   #  size = 13;
-   #};
+
+    #font = {
+    #  package = pkgs.ubuntu-sans;
+    #  name = "Ubuntu Sans";
+    #  size = 13;
+    #};
 
     theme = {
       package = pkgs.colloid-gtk-theme;

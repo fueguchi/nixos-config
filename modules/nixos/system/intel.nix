@@ -9,11 +9,10 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver
-        intel-media-sdk
         intel-compute-runtime
-        libva
+        vpl-gpu-rt
       ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [  intel-vaapi-driver ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [  intel-media-driver ];
     };
     environment.systemPackages = with pkgs; [
       vulkan-loader

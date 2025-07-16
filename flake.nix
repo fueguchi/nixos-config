@@ -16,15 +16,12 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs-unstable"; 
-
-    ags.url = "github:aylur/ags";
-    ags.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    astal.url = "github:aylur/astal";
-    astal.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    
+    quickshell.url = "github:quickshell-mirror/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, astal, ags, ... } @ inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs:
     let 
       system = "x86_64-linux";
       lib = nixpkgs.lib;
@@ -66,36 +63,6 @@
         nixvim.homeModules.nixvim
         spicetify-nix.homeManagerModules.spicetify
       ];
-    };
-
-    packages.${system}.agsApp = pkgs.stdenvNoCC.mkDerivation rec {
-      name = "my-ags-config";
-      src = ./home/programs/ags/config;
-
-      nativeBuildInputs = [
-        pkgs.esbuild
-        pkgs.wrapGAppsHook
-        pkgs.gobject-instrospection
-      ];
-
-      buildInputs = [
-        pkgs.gjs
-        pkgs.glib
-        pkgs.gtk4
-        astal.packages.${system}.io
-        astal.packages.${system}.astal4
-      ];
-
-      installPhase = ''
-        mkdir -p $out/bin
-       
-        esbuild \
-          --bundle src/app.js \
-          --outfile=$out/bin/my-shell \
-          --format=esm \
-          --sourcemap=inline \
-          --ternal:gi//\*
-      '';
     };
   };
 }

@@ -6,6 +6,6 @@
     ./inputs.nix
     ./monitor.nix
     ./exec-once.nix
-    ../animations
+    ../../common/animations
   ];
 }

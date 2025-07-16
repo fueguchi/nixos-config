@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  options.keyring.enable = lib.mkEnableOption "enable keyring module";
+  options.keyring.enable = lib.mkEnableOption "enable gnome keyring";
   config = lib.mkIf config.keyring.enable {
 
     security.pam.services = {
@@ -9,7 +9,6 @@
       login.enableGnomeKeyring = true;
     };
 
-    services.gnome.gnome-keyring.enable = true;
     services.dbus.packages = [ pkgs.gnome-keyring pkgs.gcr ];
     services.xserver.updateDbusEnvironment = true;
 
@@ -17,8 +16,6 @@
     
     environment.systemPackages = with pkgs; [
       libsecret
-      gnome-keyring
-    ]; 
-      
+    ];
   };
 }

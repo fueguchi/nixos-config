@@ -5,5 +5,6 @@
     file-roller
     nautilus
     gnome-font-viewer
+    qview    
   ];
 }

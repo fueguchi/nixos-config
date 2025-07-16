@@ -1,12 +1,17 @@
 { pkgs, ... }:
 {
   imports = [
+    
     ./system
+    ./desktop
+
     ./nix.nix
     ./dev.nix
     ./gaming.nix
     ./programs.nix
+    ./quickshell.nix
     ./virtualisation.nix
+  
   ];
 
   environment.systemPackages = with pkgs; [
@@ -24,4 +29,8 @@
     ffmpeg-full
     wf-recorder
   ];
+    programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [ thunar-volman ];
+  };
 }

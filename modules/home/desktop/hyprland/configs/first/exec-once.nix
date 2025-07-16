@@ -8,5 +8,6 @@
     "rfkill unblock bluetooth"
     "eww open bar"
     "systemctl stop zerotierone"
+    "hyprctl keyword 'device[elan-touchpad]:enabled 'false''"
   ];
 }

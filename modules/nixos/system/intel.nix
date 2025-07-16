@@ -7,12 +7,16 @@
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
+      package = pkgs.mesa;
+      package32 = pkgs.pkgsi686Linux.mesa;
       extraPackages = with pkgs; [
         intel-media-driver
         intel-compute-runtime
         vpl-gpu-rt
       ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [  intel-media-driver ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        intel-media-driver
+      ];
     };
     environment.systemPackages = with pkgs; [
       vulkan-loader

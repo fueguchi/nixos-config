@@ -3,7 +3,7 @@
     #./hyprlock
     ./utils.nix
     ./hypridle.nix
-    ./hyprland-portal.nix
-    ./hyprland
+    ./portal.nix
+    ./hyprland.nix
   ];
 }

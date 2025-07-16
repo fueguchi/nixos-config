@@ -9,6 +9,12 @@
     spotify.enable = false;
     spicetify.enable = true;
   };
+  
+  social = {
+    discord.enable = true;
+    element.enable = false;
+    telegram.enable = true;
+  };
 
   home = {
     username = "erik";

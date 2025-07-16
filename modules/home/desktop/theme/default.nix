@@ -7,9 +7,9 @@
   };
   home.pointerCursor = {
     enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
+    package = pkgs.capitaine-cursors;
+    name = "capitaine-cursors";
+    size = 32;
     
     gtk.enable = true;
     x11.enable = true;
@@ -23,11 +23,11 @@
       package = pkgs.colloid-icon-theme;
     }; 
 
-    #font = {
-    #  package = pkgs.ubuntu-sans;
-    #  name = "Ubuntu Sans";
-    #  size = 13;
-    #};
+    font = {
+      package = pkgs.noto-fonts;
+      name = "Noto Sans";
+      #size = 13;
+    };
 
     theme = {
       package = pkgs.colloid-gtk-theme;
@@ -55,6 +55,8 @@
     env = [
       "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
       "HYPRCURSOR_SIZE,${toString config.home.pointerCursor.size}"
+      "XCURSOR_THEME,${config.home.pointerCursor.name}"
+      "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
     ];
     exec-once = [
       "gsettings set org.gnome.desktop.interface cursor-theme '${config.home.pointerCursor.name}'"

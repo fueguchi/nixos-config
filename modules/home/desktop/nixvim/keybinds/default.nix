@@ -31,5 +31,24 @@ programs.nixvim.keymaps = [
         desc = "Focus previous window";
       };
     }
+    {
+      mode = "n";
+      key = "<C-s>";
+      action = "<ESC>:w<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Bind to save files without exit";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>t";
+      action = "<ESC>:Telescope find_files<CR>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
   ];
 }

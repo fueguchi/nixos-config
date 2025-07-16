@@ -4,15 +4,15 @@
     enable = true;
     extraConfig = ''
       include ~/.cache/wal/colors-kitty.conf
-      background_opacity 0.6
+      background_opacity 1
       background_blur 1
       shell zsh
       cursor_shape beam
-      cursor_trail 1
+      # cursor_trail 1
     '';
     font = {
-      name = "DM Mono";
-      size = 11;
+      name = "Inconsolata";
+      size = 12;
     };
     settings = {
       update_check_interval = 0;

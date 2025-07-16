@@ -1,9 +1,10 @@
 { config, pkgs, lib, ... }:
 {
-  imports = [ ./config-1 ];
+  imports = [ ./configs/first ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    systemd.variables = [ "--all" ];
+    systemd.enable = false;
+    #systemd.variables = [ "--all" ];
   };
 }

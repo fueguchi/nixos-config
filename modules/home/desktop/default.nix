@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
   imports = [
-    ./hypr
     ./theme
-    ./ags
     ./swayosd
     ./zathura
     ./nixvim
+    ./hyprland
+    ./social.nix
     ./chromium.nix
     ./firefox.nix
     ./spotify.nix
@@ -15,8 +15,7 @@
     ./bluetooth.nix
     ./gnome.nix
     ./discord.nix
-    ./thunderbird.nix
-    ./element.nix
+    ./thunderbird.nix 
   ];
 
   home.packages = with pkgs; [
@@ -24,6 +23,6 @@
     gimp
     yt-dlp
     sqlitebrowser
-    telegram-desktop
+    gnome-disk-utility
   ];
 }

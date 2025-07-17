@@ -2,34 +2,31 @@
   description = "my flake configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     
+    hyprland.url = "github:hyprwm/Hyprland";
+    
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nix-gaming.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nix-gaming.inputs.nixpkgs.follows = "nixpkgs";
 
     nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs-unstable"; 
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs"; 
     
     quickshell.url = "github:quickshell-mirror/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, spicetify-nix, nixvim, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixvim, ... } @ inputs:
     let 
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      pkgs-unstable = import nixpkgs-unstable { 
         inherit system;
         config.allowUnfree = true;
       }; 
@@ -44,7 +41,6 @@
         inherit inputs;
         inherit username;
         inherit name;
-        inherit pkgs-unstable;
       };
       modules = [
         ./host/wired/configuration.nix
@@ -52,9 +48,8 @@
     };
 
     homeConfigurations."erik@wired" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs { inherit system; };
+      inherit pkgs; 
       extraSpecialArgs = { 
-        inherit pkgs-unstable;
         inherit inputs;
         inherit system;
         };

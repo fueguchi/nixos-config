@@ -8,6 +8,7 @@
         clangd.enable = true;
         lua_ls.enable = true;
         nixd.enable = true;
+        qmlls.enable = true;
       };
     };
     emmet = {

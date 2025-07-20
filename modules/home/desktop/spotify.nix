@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, lib, inputs, config, ... }:
+{ pkgs, lib, inputs, config, ... }:
 {
   options.media = {
     spicetify.enable = lib.mkEnableOption "enable spicetify module";
@@ -10,13 +10,13 @@
     spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system}; 
     in {
       enable = true;
-      spicetifyPackage = pkgs-unstable.spicetify-cli;
-      spotifyPackage = pkgs-unstable.spotify;
+      spicetifyPackage = pkgs.spicetify-cli;
+      spotifyPackage = pkgs.spotify;
       experimentalFeatures = true;
       alwaysEnableDevTools = true;
     });
     home.packages = lib.mkIf config.media.spotify.enable 
-    (with pkgs-unstable; [ 
+    (with pkgs; [ 
       spotify-player 
       spotify ]);
   };

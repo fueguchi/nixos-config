@@ -6,6 +6,7 @@
     ./zathura
     ./nixvim
     ./hyprland
+#    ./zed.nix
     ./social.nix
     ./chromium.nix
     ./firefox.nix
@@ -19,7 +20,8 @@
   ];
 
   home.packages = with pkgs; [
-    blender
+    burpsuite
+    kdePackages.kdenlive
     gimp
     yt-dlp
     sqlitebrowser

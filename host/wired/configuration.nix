@@ -26,8 +26,6 @@
   };
 
   console.keyMap = "br-abnt2";
-  programs.git.enable = true;
-  programs.git.config.credential.helper = "manager";
-  environment.systemPackages = [ pkgs.git-credential-manager ];
+
   system.stateVersion = "25.05"; # just don't change if u don't know what you're doing
 }

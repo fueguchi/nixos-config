@@ -4,7 +4,7 @@
       force_zero_scaling = true;
     };
     decoration = {
-      rounding = 0;
+      rounding = 20;
       active_opacity = 1;
       inactive_opacity = 1;
 
@@ -55,7 +55,7 @@
     source = "~/.cache/wal/hypr.conf";
     general = {
       gaps_in = 5;
-      gaps_out = 10;
+      gaps_out = 5;
       border_size = 2;
       "col.active_border" = "$color1 45deg";
       "col.inactive_border" = "$color0";

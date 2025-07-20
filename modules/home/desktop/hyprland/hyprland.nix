@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
-  imports = [ ./configs/first ];
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+    ./configs/first 
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

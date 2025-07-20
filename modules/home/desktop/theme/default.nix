@@ -7,9 +7,9 @@
   };
   home.pointerCursor = {
     enable = true;
-    package = pkgs.capitaine-cursors;
-    name = "capitaine-cursors";
-    size = 32;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 20;
     
     gtk.enable = true;
     x11.enable = true;

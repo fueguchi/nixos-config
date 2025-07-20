@@ -1,11 +1,12 @@
-{ pkgs-unstable, ... }:
+{ inputs, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs-unstable; [
-    kdePackages.qtsvg
-    kdePackages.qtimageformats
-    kdePackages.qtmultimedia
-    kdePackages.qt5compat
-    kdePackages.qtdeclarative
+  environment.systemPackages = with pkgs; [
+    inputs.quickshell.packages.${pkgs.system}.default
+    qt6.qtsvg
+    qt6.qtimageformats
+    qt6.qtmultimedia
+    qt6.qt5compat
+    qt6.qtdeclarative
     aubio
   ];
 }

@@ -2,15 +2,23 @@
 {
   programs.zsh = {
     enable = true;
+    enableBashCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       ga = "git add";
       gc = "git commit";
       gs = "git status";
       ".d" = "cd $HOME/.dotfiles";
-      ez = "eza --icons";
+    };
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" ];
+      custom = "$HOME/.oh-my-zsh/custom/";
+      theme = "powerlevel10k/powerlevel10k";
     };
   };
-  programs.zsh.interactiveShellInit = ''
+  programs.zsh.interactiveShellInit = lib.mkAfter ''
     nr() {
       if [ -d "$HOME/.dotfiles" ]; then
         (cd "$HOME/.dotfiles" && sudo nixos-rebuild switch --flake .#)
@@ -28,6 +36,7 @@
       fi
     }
   '';
+
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = [ pkgs.zsh ];
 }

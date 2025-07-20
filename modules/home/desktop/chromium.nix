@@ -2,7 +2,7 @@
 {
   programs.chromium = {
     enable = true;
-    package = pkgs.google-chrome;
+    package = pkgs.chromium;
     extensions = [
       { id = "ddkjiahejlhfcafbddmgiahcphecmpfh"; } # ublock origin
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # bitwarden password manager

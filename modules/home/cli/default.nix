@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    win2xcur
     grim
     wl-clipboard
     slurp

@@ -6,5 +6,6 @@
     nautilus
     gnome-font-viewer
     qview    
+    kdePackages.dolphin
   ];
 }

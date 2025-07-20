@@ -4,14 +4,15 @@
     
     ./system
     ./desktop
-
+    
+    ./git.nix
     ./nix.nix
     ./dev.nix
     ./gaming.nix
     ./programs.nix
     ./quickshell.nix
     ./virtualisation.nix
-  
+      
   ];
 
   environment.systemPackages = with pkgs; [
@@ -31,6 +32,11 @@
   ];
     programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-volman ];
+    plugins = with pkgs.xfce; [
+      thunar-volman
+      thunar-vcs-plugin
+      thunar-media-tags-plugin
+      thunar-archive-plugin
+      ];
   };
 }

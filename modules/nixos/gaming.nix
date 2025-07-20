@@ -37,5 +37,8 @@
       enable = true;
       enableRenice = true;
     };
+    services.zerotierone = lib.mkIf cfggaming.minecraft.enable {
+      enable = true;
+    };
   };
 }

@@ -23,4 +23,7 @@
       bold_italic_font = "auto";
     };
   };
+  programs.ghostty = {
+    enable = true;
+  };
 }

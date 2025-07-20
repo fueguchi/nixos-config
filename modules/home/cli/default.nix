@@ -2,6 +2,7 @@
 {
   imports = [
     ./pywal
+    ./shell
     ./kitty.nix
     ./btop.nix
     ./yazi.nix

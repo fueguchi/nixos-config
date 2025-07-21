@@ -8,11 +8,10 @@
       background_blur 1
       shell zsh
       cursor_shape beam
-      # cursor_trail 1
     '';
     font = {
-      name = "Inconsolata";
-      size = 12;
+      name = "Liga SFMono Nerd Font";
+      size = 11;
     };
     settings = {
       update_check_interval = 0;

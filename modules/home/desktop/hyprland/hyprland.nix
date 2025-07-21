@@ -8,6 +8,5 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = false;
-    #systemd.variables = [ "--all" ];
   };
 }

@@ -17,17 +17,16 @@ directory_creation () {
   fi
 }
 
-xdg () {
-  for dir in "${DIRECTORIES[@]}"; do
-    if [[ ! -d "$dir" ]]; then
-      xdg-user-dirs-update
+powerlvl10k () {
+  if [[ ! -e "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]]; then
+    echo "P10k notfound. Cloning repository..."
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
     else 
-      xdg-user-dirs-gtk-update
-    fi
-  done
+  echo "P10k is already cloned."
+  fi
 }
 
-xdg
+powerlvl10k
 directory_creation
 
 exit 0

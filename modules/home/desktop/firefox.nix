@@ -122,8 +122,8 @@
         # enable css
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         # file picker
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
-
+        "widget.use-xdg-desktop-portal.file-picker" = 2;
+       
         # scroll config
         "mousewheel.default.delta_multiplier_y" = 400;
         "mousewheel.system_scroll_override.enabled" = false;

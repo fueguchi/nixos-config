@@ -17,5 +17,7 @@
     libva-utils
     trayer
     playerctl
+    trash-cli
+    libadwaita
   ];
 }

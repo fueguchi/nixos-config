@@ -7,8 +7,8 @@
   };
   home.pointerCursor = {
     enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    package = pkgs.capitaine-cursors;
+    name = "capitaine-cursors";
     size = 20;
     
     gtk.enable = true;
@@ -19,8 +19,8 @@
     enable = true;
     
     iconTheme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     }; 
 
     font = {
@@ -30,8 +30,8 @@
     };
 
     theme = {
-      package = pkgs.colloid-gtk-theme;
-      name = "Colloid-Dark";
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita-dark";
     };
 
     gtk2 = {
@@ -40,17 +40,24 @@
 
     gtk3 = {
       extraConfig = {
-        gtk-application-prefer-dark-theme = true;
+        gtk-application-prefer-dark-theme = 1;
       };
     };
 
     gtk4 = {
       extraConfig = {
-        gtk-application-prefer-dark-theme = true;
+        gtk-application-prefer-dark-theme = 1;
       };
     };
   };
-  
+  qt = {
+    enable = true;
+    platformTheme.name = "Adwaita";
+    style = {
+      name = "Adwaita";
+      package = pkgs.adwaita-qt;
+    };
+  };
   wayland.windowManager.hyprland.settings = {
     env = [
       "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"

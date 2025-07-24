@@ -8,6 +8,7 @@
     "rfkill unblock bluetooth"
     "eww open bar"
     "systemctl stop zerotierone"
-    "hyprctl keyword 'device[elan-touchpad]:enabled 'false''"
+    #"hyprctl keyword 'device[elan-touchpad]:enabled 'false''"
+    "hyprctl keyword monitor eDP-1,enable && hyprctl keyword monitor eDP-1,disable"
   ];
 }

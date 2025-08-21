@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./sf-mono.nix
-  ];
-}

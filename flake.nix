@@ -1,58 +1,115 @@
 {
-  description = "my flake configuration";
+  outputs = {
+    self,
+    ...
+  } @ inputs:
+  let
+    inherit (self) outputs;
+
+    system = "x86_64-linux";
+    lib = inputs.nixpkgs.lib;
+
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      overlays = [
+        (import ./overlays {inherit inputs outputs;})
+      ];
+      config.allowUnfree = true;
+      config.chromium.enableWideVine = true;
+    };
+
+    mkNixosConfig = { hostName, extraModules, system }:
+      inputs.nixpkgs.lib.nixosSystem {
+        inherit system pkgs;
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          (./. + "/nixos/${hostName}/configuration.nix")
+        ] ++ extraModules;
+      };
+
+    mkHMConfig = { homeName, extraModules, system, homeDirectory }:
+      inputs.home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+          inherit system;
+          hostVars = {
+            inherit homeDirectory;
+          };
+        };
+        modules = [
+          (./. + "/home/${homeName}/home.nix")
+        ] ++ extraModules;
+      };
+  in {
+    nixosConfigurations = {
+      wired = mkNixosConfig {
+        hostName = "wired";
+        system = "x86_64-linux";
+        extraModules = [
+          inputs.nix-gaming.nixosModules.platformOptimizations
+          inputs.nix-gaming.nixosModules.pipewireLowLatency
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      "erik@wired" = mkHMConfig {
+      homeName ="erik@wired";
+      system = "x86_64-linux";
+      homeDirectory = "/home/erik";
+      extraModules = [
+          inputs.nixvim.homeModules.nixvim
+          inputs.spicetify-nix.homeManagerModules.spicetify
+          inputs.hyprland.homeManagerModules.default
+        ];
+      };
+    };
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
-    home-manager.url = "github:nix-community/home-manager";
-    
-    hyprland.url = "github:hyprwm/Hyprland";
-    
-    nix-gaming.url = "github:fufexan/nix-gaming";
-
-    nixvim.url = "github:nix-community/nixvim";
-
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    
-    quickshell.url = "github:quickshell-mirror/quickshell";
-  };
-
-  outputs = { self, nixpkgs, home-manager, spicetify-nix, nixvim, ... } @ inputs:
-    let 
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      }; 
-      username = "erik";
-      name = "erik";
-    in
-  {
-
-    nixosConfigurations.wired = lib.nixosSystem {
-      inherit system;
-      specialArgs = {
-        inherit inputs;
-        inherit username;
-        inherit name;
-      };
-      modules = [
-        ./host/wired/configuration.nix
-      ];
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    homeConfigurations."erik@wired" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs; 
-      extraSpecialArgs = { 
-        inherit inputs;
-        inherit system;
-        };
-      modules = [
-        ./home/home.nix
-        nixvim.homeModules.nixvim
-        spicetify-nix.homeManagerModules.spicetify
-      ];
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sf-mono-liga-src = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

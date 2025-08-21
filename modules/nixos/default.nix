@@ -1,42 +1,20 @@
-{ pkgs, ... }:
 {
   imports = [
-    
-    ./system
-    ./desktop
-    
-    ./git.nix
-    ./nix.nix
-    ./dev.nix
-    ./gaming.nix
-    ./programs.nix
-    ./quickshell.nix
-    ./virtualisation.nix
-      
-  ];
+    ./desktop/common
+    ./desktop/hyprland
 
-  environment.systemPackages = with pkgs; [
-    swaynotificationcenter
-    rofi-wayland
-    libayatana-appindicator
-    libayatana-indicator
-    libappindicator
-    libdbusmenu
-    libdbusmenu-gtk2
-    libdbusmenu-gtk3
-    libadwaita
-    trayer  
-    eww
-    ffmpeg-full
-    wf-recorder
+    ./gaming
+
+    ./system/db
+    ./system/services
+    ./system/audio
+    ./system/drivers
+    ./system/environment
+    ./system/keyring
+    ./system/shell/fish.nix
+
+    ./virtualisation/docker
+    ./virtualisation/virt-manager
+    ./nix.nix
   ];
-    programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-volman
-      thunar-vcs-plugin
-      thunar-media-tags-plugin
-      thunar-archive-plugin
-      ];
-  };
 }

@@ -9,47 +9,46 @@
     enable = true;
     package = pkgs.capitaine-cursors;
     name = "capitaine-cursors";
-    size = 20;
+    size = 28;
     
     gtk.enable = true;
     x11.enable = true;
   };
 
-  gtk = {
-    enable = true;
+  gtk.enable = true;
     
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    }; 
+  gtk.iconTheme = {
+    name = "Papirus-Dark";
+    package = pkgs.papirus-icon-theme;
+  }; 
 
-    font = {
-      package = pkgs.noto-fonts;
-      name = "Noto Sans";
-      #size = 13;
-    };
+  gtk.font = {
+    package = pkgs.noto-fonts;
+    name = "Noto Sans";
+    size = 12;
+  };
 
-    theme = {
-      package = pkgs.gnome-themes-extra;
-      name = "Adwaita-dark";
-    };
+  gtk.theme = {
+    package = pkgs.gnome-themes-extra;
+    name = "Adwaita-dark";
+  };
 
-    gtk2 = {
-      extraConfig = "gtk-application-prefer-dark-theme = true";
-    };
+  gtk.gtk2 = {
+    extraConfig = "gtk-application-prefer-dark-theme = true";
+  };
 
-    gtk3 = {
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
-    };
-
-    gtk4 = {
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
+  gtk.gtk3 = {
+    extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
     };
   };
+
+  gtk.gtk4 = {
+    extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
   qt = {
     enable = true;
     platformTheme.name = "Adwaita";
@@ -58,6 +57,7 @@
       package = pkgs.adwaita-qt;
     };
   };
+
   wayland.windowManager.hyprland.settings = {
     env = [
       "HYPRCURSOR_THEME,${config.home.pointerCursor.name}"
@@ -70,7 +70,4 @@
       "gsettings set org.gnome.desktop.interface cursor-size '${toString config.home.pointerCursor.size}'"
     ];
   };
-  home.packages = with pkgs; [
-    nwg-look
-  ];
 }

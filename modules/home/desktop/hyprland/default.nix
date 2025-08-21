@@ -1,9 +1,32 @@
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
+    ./configs/animations
+    ./configs/default
+    ./hypridle
     #./hyprlock
-    ./utils.nix
-    ./hypridle.nix
-    ./portal.nix
-    ./hyprland.nix
+    ./hyprportal
+    ./swayosd
+  ];
+  
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    systemd.enable = false;
+    #systemd.variables = [ "--all" ];
+  };
+
+  home.packages = with pkgs; [
+    hyprshot
+    hyprcursor
+    hyprwayland-scanner
+    hyprland-protocols
+    grim
+    wl-clipboard
+    slurp
+    swww
   ];
 }

@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+
+local_path="$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )"
+root="$(dirname "$local_path")"
+
+root_verification () {
+  if [[ $UID != 0 ]]; then
+    echo "This script requires root privileges."
+    echo "Please, give root passwd or cancel to exit"
+    sudo "$0" "$@"
+    exit $?
+  fi
+}
+
+root_verification
+
+read -p "Username: " username
+read -p "Hostname: " hostname
+
+homename="${username}@${hostname}"
+
+echo "Warning: This script is just for automise the first install of NixOS."
+
+gen_cfg_dir="${root}/config-generated"
+hw_config_dir="${root}/nixos/${hostname}"
+hw_config="${hw_config_dir}/hardware-configuration.nix"
+
+delete_hardware_config () {
+  if [[ -e "${hw_config}" ]]; then
+    rm -rf "${hw_config}"
+    echo "'${hw_config}' was been deleted successfully"
+  fi
+}
+
+generate_new_hardware_config () {
+  mkdir -p "${gen_cfg_dir}"
+  cd "${gen_cfg_dir}"
+  nixos-generate-config --dir .
+  if [[ -e "${gen_cfg_dir}/hardware-configuration.nix" ]]; then
+    echo "hardware-configuration.nix was been generated successfully."
+  fi
+}
+
+move_hardware_config () {
+  mv "${gen_cfg_dir}/hardware-configuration.nix" "${hw_config_dir}/"
+  if [[ -e "${hw_config}" ]]; then
+    echo "hardware-configuration.nix was moved successfully."
+  else
+    echo "Failure to move hardware-configuration.nix"
+    exit 1
+  fi
+  cd "${root}"
+  rm -rf "${gen_cfg_dir}"
+}
+
+git_safe_directory () {
+  if command -v git &> /dev/null; then
+    git config --global --add safe.directory "${root}"
+      if [[ $? -eq 0 ]]; then
+        echo "Successfully added '${root}' to root's git safe directory"
+      else
+        echo "Warning: Failed to add '${root}' to root's git safe directory. This usually causes rebuild issues."
+      fi
+  else
+    echo "Command 'git' not found."
+  fi
+}
+
+rebuild () {
+  nixos-rebuild switch --flake .#${hostname}
+    
+  sudo -u "${username}" nix run home-manager switch -- -b backup --flake .#${homename}
+}
+
+main () {
+  delete_hardware_config
+
+  generate_new_hardware_config
+
+  move_hardware_config
+
+  git_safe_directory
+    
+  rebuild
+}
+
+main && exit 0

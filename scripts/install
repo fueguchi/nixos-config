@@ -19,7 +19,7 @@ read -p "Hostname: " hostname
 
 homename="${username}@${hostname}"
 
-echo "Warning: This script is just for automise the first install of NixOS."
+echo "Warning: This script is only to automate the first install of NixOS."
 
 gen_cfg_dir="${root}/config-generated"
 hw_config_dir="${root}/nixos/${hostname}"
